@@ -5,18 +5,22 @@ import java.util.ArrayList;
 
 public class doctor {
     public static int idcounter = 0;
-    private String name, password, doctorId;
+    private String name, password, doctorId, doctorUserName;
     private ArrayList<Treatment> treatments;
 
-    public doctor(String name , String password){
+    public doctor(String name , String doctorUserName, String password){
         this.name = name;
         this.password = password;
+        this.doctorUserName = doctorUserName;
         this.doctorId = String.valueOf(++idcounter);
         this.treatments = new ArrayList<>();
     }
 
     public String getDoctorId(){
         return doctorId;
+    }
+    public String getUserName(){
+        return doctorUserName;
     }
     public void addTreatment(Treatment t){
         treatments.add(t);

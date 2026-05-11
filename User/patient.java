@@ -5,12 +5,13 @@ import java.util.ArrayList;
 public class patient {
     public static int idcounter = 0;
 
-    private String patientId, mobileno, name, password;
+    private String patientId, mobileno, name, password, patientUserName;
     private ArrayList<Treatment> treatments;
 
-    public patient(String name , String password, String mobileno){
+    public patient(String name , String patientUserName , String password, String mobileno){
         this.patientId = String.valueOf(++idcounter);
         this.name = name;
+        this.patientUserName = patientUserName;
         this.password = password;
         this.mobileno = mobileno;
         this.treatments = new ArrayList<>();
@@ -27,6 +28,9 @@ public class patient {
     public String getName(){
         return name;
     }
+    public String getUserName(){
+        return patientUserName;
+    }
     public String getPassword(){
         return password;
     }
@@ -34,6 +38,6 @@ public class patient {
         return mobileno;
     }
     public String toString(){
-        return "Patient ID: " + patientId + "\nName: " + name + "\nMobile No: " + mobileno + "\n";
+        return "Patient ID: " + patientId + "\nName: " + name + "\nUser Name: " + patientUserName + "\nMobile No: " + mobileno + "\n";
     }
 }
